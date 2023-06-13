@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import '../../helper/navigation/navigators.dart';
-import '../home/home_screen.dart';
+import '../../helper/style/app_colors.dart';
+import '../layout/home_layout.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -18,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
     // TODO: implement initState
     super.initState();
     Future.delayed(const Duration(seconds: 3),(){
-      navigateAndEnd(context, const HomeScreen());
+      navigateAndEnd(context, const HomeLayout());
     });
   }
 
@@ -26,9 +27,10 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       backgroundColor: AppColors.colorTow,
       appBar: AppBar(
-        systemOverlayStyle: SystemUiOverlayStyle(
-            statusBarColor: Colors.grey.shade100,
+        systemOverlayStyle: const SystemUiOverlayStyle(
+            statusBarColor: AppColors.colorTow,
             systemNavigationBarDividerColor: Colors.white,
             systemNavigationBarColor: Colors.white),
         toolbarHeight: 0,
@@ -48,8 +50,8 @@ class _SplashScreenState extends State<SplashScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
-              "assets/images/logo/metlife_logo.png",
-              width: 200,
+              "assets/images/logo/Bezzie logo.png",
+              width: 300,
             ).animate()
                 .fade(duration: 500.ms)
                 .scale(delay: 500.ms),

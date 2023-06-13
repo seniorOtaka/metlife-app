@@ -39,6 +39,10 @@ dependencies:
   bloc: ^8.1.0
   flutter_animate: ^4.1.1+1
   intl_phone_field: ^3.1.0
+  country_list_pick: ^1.0.1+6
+  image_picker: ^0.8.3
+  expand_widget: ^3.1.1
+  expansion_tile_card: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -50,11 +54,26 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  flutter_launcher_icons: ^0.13.1
 
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
 
-# The following section is specific to Flutter packages.
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/logo/logo app.png"
+  min_sdk_android: 21
+  web:
+    generate: true
+    image_path: "assets/images/logo/logo app.png"
+    background_color: "#ffffff"
+    theme_color: "#ffffff"
+  windows:
+    generate: true
+    image_path: "assets/images/logo/logo app.png"
+    icon_size: 48 # min:48, max:256, default: 48
+
+
+
 flutter:
 
   # The following line ensures that the Material Icons font is
@@ -64,9 +83,10 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/logo/metlife_logo.png
-    - assets/images/adcb.png
-    - assets/images/
+    - assets/images/logo/Bezzie_logo.png
+    - assets/images/logo/Bezzie logo.png
+    - assets/doctor.jpg
+    - assets/images/logo/logo app.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
