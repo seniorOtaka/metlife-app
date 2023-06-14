@@ -34,7 +34,13 @@ class DoneScreen extends StatelessWidget {
               height: 20,
             ),
             Text(
-                  "Dear MR: ${cubit.firstName.text} ${cubit.lastName.text} , congratulations on "
+                'Great going Ayesha! Welcome to the bezZie family! We hope we will become friends for life.'
+                'Your policy is on your way to your inbox. You can also download it here.'
+
+            'We are here for you, whenever you need us.'
+                '(CHAT ICON)'
+
+      /*"Dear MR: ${cubit.firstName.text} ${cubit.lastName.text} , congratulations on "
                   "taking this important step in protecting yourself"
                   " and your family. Your policy documents will be"
                   " emailed to you shortly. For additional queries or "
@@ -42,7 +48,7 @@ class DoneScreen extends StatelessWidget {
                       "\n"
                       " please contact: 04 4154 777 or 04 4154 800."
                       "\n"
-              " Monday - Friday from 9:00 AM to 5:00 PM.",
+              " Monday - Friday from 9:00 AM to 5:00 PM."*/,
               style: const TextStyle(
                 color: Colors.black,
                 fontSize: 14,

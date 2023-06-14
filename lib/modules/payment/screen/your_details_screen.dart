@@ -22,7 +22,7 @@ class YourDetailsScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(
+/*              Center(
                 child: Container(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
@@ -38,11 +38,11 @@ class YourDetailsScreen extends StatelessWidget {
               ),
               const SizedBox(
                 height: 30,
-              ),
+              ),*/
+
+
               const MyText(
-                text: "Please verify and fill your details."
-                    " It will help us to propose the most"
-                    " appropriate coverage for you",
+                text: "Let’s start to get your bezZie in a minute.",
                 color: Colors.black,
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -96,48 +96,46 @@ class YourDetailsScreen extends StatelessWidget {
                       "${value!.month}/${value.day}/${value.year}",
                 ),
                 controller: cubit.userDate,
-                decoration: const InputDecoration(hintText: "dd/mm/yyyy"),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-
-              /// Are you residing in UAE?
-              const MyText(
-                text: "Gender *",
-                color: Colors.black,
-                fontSize: 14,
+                decoration: const InputDecoration(hintText: "Date Of Birth"),
               ),
               const SizedBox(
                 height: 10,
               ),
               Row(
-                  children: List.generate(
-                cubit.isGenderList.length,
-                (index) => Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: cubit.isGender == index
-                          ? AppColors.mainColor
-                          : AppColors.mainColor.withOpacity(0.1),
-                      // shadowColor: AppColors.shadowColor.withOpacity(0.3),
-                      elevation: 0,
-                      minimumSize: const Size(150, 50),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                    onPressed: () => cubit.isSelectGender(index),
-                    child: MyText(
-                      text: cubit.isGenderList[index],
-                      color: cubit.isGender == index
-                          ? Colors.white
-                          : AppColors.mainColor,
-                    ),
-                  ),
-                ),
-              )),
+                  children:[
+                    const Row(
+                        children: [MyText(
+                        text: "Gender *",
+                        color: Colors.black,
+                        fontSize: 14,
+                      )]),
+                    Row(
+                        children:List.generate(
+                          cubit.isGenderList.length,
+                          (index) =>  Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                            child:ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: cubit.isGender == index
+                                    ? AppColors.mainColor
+                                    : AppColors.mainColor.withOpacity(0.1),
+                                // shadowColor: AppColors.shadowColor.withOpacity(0.3),
+                                elevation: 0,
+                                minimumSize: const Size(50, 50),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                              ),
+                              onPressed: () => cubit.isSelectGender(index),
+                              child: MyText(
+                                text: cubit.isGenderList[index],
+                                color: cubit.isGender == index
+                                    ? Colors.white
+                                    : AppColors.mainColor,
+                              ),
+                            ),
+                          ),
+              ))]),
               const SizedBox(
                 height: 10,
               ),
@@ -158,13 +156,14 @@ class YourDetailsScreen extends StatelessWidget {
                 decoration: const InputDecoration(
                   hintText: 'Mobile',
                 ),
-                initialCountryCode: 'EG',
+                initialCountryCode: 'UAE',
+                showCountryFlag: false,
                 onChanged: (phone) {
                   print(phone.completeNumber);
                 },
               ),
 
-              TextFormField(
+/*              TextFormField(
                 keyboardType: TextInputType.number,
                 controller: cubit.height,
                 decoration:
@@ -182,8 +181,8 @@ class YourDetailsScreen extends StatelessWidget {
               ),
               const SizedBox(
                 height: 10,
-              ),
-              const MyText(
+              ),*/
+              /*const MyText(
                 text:
                     "Can you confirm you are employed and actively at work? *",
                 color: Colors.black,
@@ -218,7 +217,7 @@ class YourDetailsScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-              )),
+              )),*/
               const SizedBox(
                 height: 15,
               ),
@@ -232,12 +231,13 @@ class YourDetailsScreen extends StatelessWidget {
                     width: 0,
                   ),
                   Expanded(
-                    child: Text(
-                      "Please be aware that Pre-Existing Conditions"
-                      " are excluded and any claim resulting from a "
-                      "condition, illness or disease that existed"
-                      " prior"
-                      " to the effective date of this policy will not be covered by MetLife.",
+
+
+                  child: Text(
+                      "In order to get the best just for you, we will be asking from time to time, to tell us more about yourself."
+                      "Don’t worry, all your data is safe with us."
+                      "Check out our Data Privacy Policy."
+                      "If you are ok with that and with our terms & conditions, please click here.",
                       style: TextStyle(
                         color: Colors.grey.shade600,
                         fontSize: 13,

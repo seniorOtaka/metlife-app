@@ -57,7 +57,7 @@ class SummaryScreen extends StatelessWidget {
                       height: 10,
                     ),
                     MyText(
-                      text: "Effective Date: ${cubit.policyDate.text}",
+                      text: "Effective Date: 6/21/2023",//${cubit.policyDate.text}",
                       color: Colors.grey.shade600,
                       fontSize: 14,
                     ),
@@ -76,7 +76,7 @@ class SummaryScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: const MyText(
-                    text: "Your Coverage",
+                    text: "Your Benifits",
                     color: Colors.white,
                     fontSize: 20,
                   ),
@@ -97,7 +97,7 @@ class SummaryScreen extends StatelessWidget {
                   title: const Padding(
                     padding: EdgeInsets.all(10.0),
                     child: MyText(
-                      text: "Coverage :"
+                      text: "Benifits"
                           "\n"
                           "200,000.00 USD",
                       color: AppColors.blackColor,
@@ -218,14 +218,9 @@ class SummaryScreen extends StatelessWidget {
                       data: cubit.email.text,
                     ),
                     const Divider(),
-                    const RowUserDetails(
-                      title: "Nationality",
-                      data: "Egypt",
-                    ),
-                    const Divider(),
                     RowUserDetails(
                       title: "Mobile",
-                      data: cubit.phone.text,
+                      data: "+971"+cubit.phone.text,
                     ),
                   ],
                 ),
@@ -234,22 +229,6 @@ class SummaryScreen extends StatelessWidget {
                 height: 30,
               ),
 
-              /// Terms & Conditions
-              Center(
-                child: Container(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                  decoration: BoxDecoration(
-                    color: AppColors.mainColor.withOpacity(0.5),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: const MyText(
-                    text: "Terms & Conditions",
-                    color: Colors.white,
-                    fontSize: 20,
-                  ),
-                ),
-              ),
               const SizedBox(
                 height: 30,
               ),

@@ -60,7 +60,7 @@ class YourQuoteScreen extends StatelessWidget {
                 children: [
                   PlanCardWidget(
                     planName: "Bronze",
-                    planPrice: cubit.confirm == false ? "34.00" : "41.00",
+                    planPrice: cubit.confirm == true ? "34" : "41",
                     accidentalPrice: "1,000",
                     lossOfLifeDueToAccidentPrice: "300,000",
                     lossOfLifeDueToNaturalPrice: "25,000",
@@ -70,7 +70,7 @@ class YourQuoteScreen extends StatelessWidget {
                   ),
                   PlanCardWidget(
                     planName: "Silver",
-                    planPrice: cubit.confirm == false ? "51.00" : "61.00",
+                    planPrice: cubit.confirm == true ? "51" : "61",
                     accidentalPrice: "100,000",
                     lossOfLifeDueToAccidentPrice: "600,000",
                     lossOfLifeDueToNaturalPrice: "50,000",
@@ -82,10 +82,10 @@ class YourQuoteScreen extends StatelessWidget {
               ),
               PlanCardWidget(
                 planName: "Gold",
-                planPrice: cubit.confirm == false ? "68.00" : "82.00",
+                planPrice: cubit.confirm == true ? "68" : "82",
                 accidentalPrice: "200,000",
                 lossOfLifeDueToAccidentPrice: "1,200,000",
-                lossOfLifeDueToNaturalPrice: "100.000",
+                lossOfLifeDueToNaturalPrice: "100",
               ),
               const SizedBox(
                 height: 30,
@@ -179,7 +179,7 @@ class _PlanCardWidgetState extends State<PlanCardWidget> {
                 height: 10,
               ),
               MyText(
-                text: 'Accidental loss of life',
+                text: 'Accidental Medical Reimbursement (AMR)',
                 color: Colors.grey.shade600,
                 fontSize: 14,
               ),
@@ -187,7 +187,7 @@ class _PlanCardWidgetState extends State<PlanCardWidget> {
                 height: 5,
               ),
               MyText(
-                text: "${widget.accidentalPrice}.00 USD",
+                text: "${widget.accidentalPrice} USD",
                 color: AppColors.mainColor,
                 fontSize: 14,
               ),
@@ -196,8 +196,7 @@ class _PlanCardWidgetState extends State<PlanCardWidget> {
                 height: 10,
               ),
               MyText(
-                text: 'Loss of life due to accident on common carrier'
-                    ' outside the country of issue',
+                text: 'Permenant Partial Disability due to accident (PPD)',
                 color: Colors.grey.shade600,
                 fontSize: 14,
               ),
@@ -205,7 +204,7 @@ class _PlanCardWidgetState extends State<PlanCardWidget> {
                 height: 5,
               ),
               MyText(
-                text: "${widget.lossOfLifeDueToAccidentPrice}.00 USD",
+                text: "${widget.lossOfLifeDueToAccidentPrice} USD",
                 color: AppColors.mainColor,
                 fontSize: 14,
               ),
@@ -214,7 +213,7 @@ class _PlanCardWidgetState extends State<PlanCardWidget> {
                 height: 10,
               ),
               MyText(
-                text: 'Loss of life due to natural occurrences',
+                text: 'In Hospital income due to accident and sickness (IHI)',
                 color: Colors.grey.shade600,
                 fontSize: 14,
               ),
@@ -222,7 +221,7 @@ class _PlanCardWidgetState extends State<PlanCardWidget> {
                 height: 5,
               ),
               MyText(
-                text: "${widget.lossOfLifeDueToNaturalPrice}.00 USD",
+                text: "${widget.lossOfLifeDueToNaturalPrice} USD",
                 color: AppColors.mainColor,
                 fontSize: 14,
               ),

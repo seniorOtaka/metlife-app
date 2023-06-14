@@ -168,6 +168,7 @@ class AppCubit extends Cubit<AppState> {
   List<String> isGenderList = [
     "Male",
     "Female",
+    "Other"
   ];
 
   void isSelectGender(index) {
@@ -663,7 +664,7 @@ class AppCubit extends Cubit<AppState> {
     List<DropdownMenuItem<String>> menuItems = [
       // const DropdownMenuItem(value: "Choosemaritalstatus", child: Text("Choose marital status")),
       const DropdownMenuItem(value: "Married", child: Text("Married")),
-      const DropdownMenuItem(value: "Not Married", child: Text("Not Married")),
+      const DropdownMenuItem(value: "Single", child: Text("Single")),
       const DropdownMenuItem(value: "Divorced", child: Text("Divorced")),
       const DropdownMenuItem(value: "Widow", child: Text("Widow")),
       const DropdownMenuItem(

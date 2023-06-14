@@ -46,7 +46,7 @@ class HomeLayout extends StatelessWidget {
                           width: 120,
                         ),
                       ),
-                       Align(
+                      /* Align(
                         alignment: Alignment.centerRight,
                         child:  InkWell(
                           onTap: () => cubit.showInfoState(context),
@@ -59,7 +59,7 @@ class HomeLayout extends StatelessWidget {
                             ),
                           ),
                         ),
-                      ),
+                      ),*/
                     ],
                   ),
                 ),
