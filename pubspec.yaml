@@ -87,6 +87,8 @@ flutter:
     - assets/images/logo/Bezzie logo.png
     - assets/doctor.jpg
     - assets/images/logo/logo app.png
+    - assets/images/apple pay.png
+    - assets/images/image.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

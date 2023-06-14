@@ -19,51 +19,69 @@ class DoneScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            const SizedBox(
+              height: 20,
+            ),
+            Image.asset(
+              "assets/images/logo/Bezzie_logo.png",
+              width: 200,
+            ),
+            const Spacer(),
+            const SizedBox(
+              height: 50,
+            ),
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: Image.asset("assets/doctor.jpg",width: 300),
+              // child: Image.asset("assets/doctor.jpg", width: 300),
+              child: Image.asset("assets/images/image.jpg", height: 250,fit: BoxFit.cover),
             ),
             const SizedBox(
               height: 20,
             ),
             const MyText(
               text: "Policy #DSPU37",
-              color:AppColors.mainColor,
+              color: AppColors.mainColor,
               fontSize: 16,
             ), const SizedBox(
               height: 20,
             ),
-            Text(
-                'Great going Ayesha! Welcome to the bezZie family! We hope we will become friends for life.'
-                'Your policy is on your way to your inbox. You can also download it here.'
-
-            'We are here for you, whenever you need us.'
-                '(CHAT ICON)'
-
-      /*"Dear MR: ${cubit.firstName.text} ${cubit.lastName.text} , congratulations on "
-                  "taking this important step in protecting yourself"
-                  " and your family. Your policy documents will be"
-                  " emailed to you shortly. For additional queries or "
-                  "customer support,"
-                      "\n"
-                      " please contact: 04 4154 777 or 04 4154 800."
-                      "\n"
-              " Monday - Friday from 9:00 AM to 5:00 PM."*/,
-              style: const TextStyle(
+            const Text(
+              'Great going Ayesha! Welcome to the bezZie family! We hope we will become friends for life.'
+                  'Your policy is on your way to your inbox. You can also download it here.'
+                  "\n",
+              style: TextStyle(
                 color: Colors.black,
                 fontSize: 14,
                 height: 1.5,
-
               ),
               textAlign: TextAlign.center,
-
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: const [
+                Text('We are here for you, whenever you need us.',
+                  style: TextStyle(
+                    color: AppColors.mainColor,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    decoration: TextDecoration.underline,
+                    height: 1.5,
+                  ),
+                ),
+                SizedBox(width: 5,),
+                Icon(Icons.message,color: AppColors.mainColor,)
+              ],
             ),
             const SizedBox(
               height: 20,
             ),
+            const Spacer(),
           ],
-        ),
-      ),
+        )
+        ,
+      )
+      ,
     );
   }
 }

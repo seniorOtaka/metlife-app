@@ -40,7 +40,6 @@ class YourDetailsScreen extends StatelessWidget {
                 height: 30,
               ),*/
 
-
               const MyText(
                 text: "Let’s start to get your bezZie in a minute.",
                 color: Colors.black,
@@ -86,56 +85,57 @@ class YourDetailsScreen extends StatelessWidget {
                     return "This field is required.";
                   }
                 },
-                onTap: () => showDatePicker(
-                  context: context,
-                  initialDate: DateTime.now(),
-                  firstDate: DateTime(1970),
-                  lastDate: DateTime(2050),
-                ).then(
-                  (value) => cubit.userDate.text =
-                      "${value!.month}/${value.day}/${value.year}",
-                ),
+                // onTap: () => showDatePicker(
+                //   context: context,
+                //   initialDate: DateTime.now(),
+                //   firstDate: DateTime(1970),
+                //   lastDate: DateTime(2050),
+                // ).then(
+                //   (value) => cubit.userDate.text =
+                //       "${value!.month}/${value.day}/${value.year}",
+                // ),
                 controller: cubit.userDate,
                 decoration: const InputDecoration(hintText: "Date Of Birth"),
               ),
               const SizedBox(
                 height: 10,
               ),
-              Row(
-                  children:[
-                    const Row(
-                        children: [MyText(
-                        text: "Gender *",
-                        color: Colors.black,
-                        fontSize: 14,
-                      )]),
-                    Row(
-                        children:List.generate(
-                          cubit.isGenderList.length,
-                          (index) =>  Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
-                            child:ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: cubit.isGender == index
-                                    ? AppColors.mainColor
-                                    : AppColors.mainColor.withOpacity(0.1),
-                                // shadowColor: AppColors.shadowColor.withOpacity(0.3),
-                                elevation: 0,
-                                minimumSize: const Size(50, 50),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                              ),
-                              onPressed: () => cubit.isSelectGender(index),
-                              child: MyText(
-                                text: cubit.isGenderList[index],
-                                color: cubit.isGender == index
-                                    ? Colors.white
-                                    : AppColors.mainColor,
-                              ),
-                            ),
-                          ),
-              ))]),
+              Row(children: [
+                Row(children: const [
+                  MyText(
+                    text: "Gender *",
+                    color: Colors.black,
+                    fontSize: 14,
+                  )
+                ]),
+                Row(
+                    children: List.generate(
+                  cubit.isGenderList.length,
+                  (index) => Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: cubit.isGender == index
+                            ? AppColors.mainColor
+                            : AppColors.mainColor.withOpacity(0.1),
+                        // shadowColor: AppColors.shadowColor.withOpacity(0.3),
+                        elevation: 0,
+                        minimumSize: const Size(50, 50),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      onPressed: () => cubit.isSelectGender(index),
+                      child: MyText(
+                        text: cubit.isGenderList[index],
+                        color: cubit.isGender == index
+                            ? Colors.white
+                            : AppColors.mainColor,
+                      ),
+                    ),
+                  ),
+                ))
+              ]),
               const SizedBox(
                 height: 10,
               ),
@@ -151,18 +151,32 @@ class YourDetailsScreen extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              IntlPhoneField(
+              // IntlPhoneField(
+              //   controller: cubit.phone,
+              //   decoration: const InputDecoration(
+              //     hintText: 'Mobile',
+              //   ),
+              //   initialCountryCode: '+20',
+              //   showCountryFlag: false,
+              //   onChanged: (phone) {
+              //     print(phone.completeNumber);
+              //   },
+              // ),
+              TextFormField(
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return "This field is required.";
+                  }
+                },
+
                 controller: cubit.phone,
                 decoration: const InputDecoration(
-                  hintText: 'Mobile',
+                icon: Text("+971  ",style: TextStyle(color: Colors.black)),
+                  // hintText: "Mobile",
+                  // prefixText:"+971   "   ,
+                  // prefix: Text("+971  ",style: TextStyle(color: Colors.black)),
                 ),
-                initialCountryCode: 'UAE',
-                showCountryFlag: false,
-                onChanged: (phone) {
-                  print(phone.completeNumber);
-                },
               ),
-
 /*              TextFormField(
                 keyboardType: TextInputType.number,
                 controller: cubit.height,
@@ -231,9 +245,7 @@ class YourDetailsScreen extends StatelessWidget {
                     width: 0,
                   ),
                   Expanded(
-
-
-                  child: Text(
+                    child: Text(
                       "In order to get the best just for you, we will be asking from time to time, to tell us more about yourself."
                       "Don’t worry, all your data is safe with us."
                       "Check out our Data Privacy Policy."

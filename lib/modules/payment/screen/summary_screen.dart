@@ -57,7 +57,8 @@ class SummaryScreen extends StatelessWidget {
                       height: 10,
                     ),
                     MyText(
-                      text: "Effective Date: 6/21/2023",//${cubit.policyDate.text}",
+                      text: "Effective Date: 6/21/2023",
+                      //${cubit.policyDate.text}",
                       color: Colors.grey.shade600,
                       fontSize: 14,
                     ),
@@ -65,8 +66,10 @@ class SummaryScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 30,
+                height: 10,
               ),
+
+              ///Your Benifits
               Center(
                 child: Container(
                   padding:
@@ -83,11 +86,11 @@ class SummaryScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 30,
+                height: 10,
               ),
               Container(
                 width: double.infinity,
-                padding: const EdgeInsets.all(10),
+                // padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
@@ -97,9 +100,9 @@ class SummaryScreen extends StatelessWidget {
                   title: const Padding(
                     padding: EdgeInsets.all(10.0),
                     child: MyText(
-                      text: "Benifits"
-                          "\n"
-                          "200,000.00 USD",
+                      text: "Benifits",
+                      // "\n"
+                      // "200,000.00 USD",
                       color: AppColors.blackColor,
                       fontSize: 16,
                     ),
@@ -113,63 +116,21 @@ class SummaryScreen extends StatelessWidget {
                       padding: const EdgeInsets.all(10.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          // Row(
-                          //   mainAxisAlignment: MainAxisAlignment.start,
-                          //   children: const [
-                          //     Icon(
-                          //       Icons.done,
-                          //       color: Colors.green,
-                          //     ),
-                          //     SizedBox(
-                          //       width: 10,
-                          //     ),
-                          //     MyText(
-                          //       text: "Coverage :"
-                          //           "\n"
-                          //           "200,000.00 USD",
-                          //       color: AppColors.blackColor,
-                          //       fontSize: 16,
-                          //     ),
-                          //   ],
-                          // ),
-                          // const SizedBox(height: 10,),
-                          const Divider(),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              Icon(
-                                Icons.done,
-                                color: Colors.green,
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              MyText(
-                                text: "Covered Illnesses :"
-                                    "\n"
-                                    "  • Cancer"
-                                    "\n"
-                                    "  • Brain Tumor"
-                                    "\n"
-                                    "  • Stroke"
-                                    "\n"
-                                    "  • Coronary Artery By-pass Surgery"
-                                    "\n"
-                                    "  • First Heart Attack"
-                                    "\n"
-                                    "  • Heart Valve Surgery"
-                                    "\n"
-                                    "  • Primary Pulmonary Hypertension"
-                                    "\n"
-                                    "  • Coma"
-                                    "\n"
-                                    "  • Multiple Sclerosis",
-                                color: AppColors.blackColor,
-                                fontSize: 16,
-                              ),
-                            ],
+                        children: const [
+                          Divider(),
+                          RowText(
+                            text: 'Accidental Medical Reimbursement (AMR)',
+                            price: "100,000",
+                          ),
+                          RowText(
+                            text:
+                                'Permenant Partial Disability due to accident (PPD)',
+                            price: "600,000",
+                          ),
+                          RowText(
+                            text:
+                                'In Hospital income due to accident and sickness (IHI)',
+                            price: "50,000",
                           ),
                         ],
                       ),
@@ -178,8 +139,10 @@ class SummaryScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 30,
+                height: 10,
               ),
+
+              /// Your Details
               Center(
                 child: Container(
                   padding:
@@ -196,7 +159,7 @@ class SummaryScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 30,
+                height: 10,
               ),
               Container(
                 width: double.infinity,
@@ -220,18 +183,15 @@ class SummaryScreen extends StatelessWidget {
                     const Divider(),
                     RowUserDetails(
                       title: "Mobile",
-                      data: "+971"+cubit.phone.text,
+                      data: "+971" + cubit.phone.text,
                     ),
                   ],
                 ),
               ),
               const SizedBox(
-                height: 30,
+                height: 15,
               ),
 
-              const SizedBox(
-                height: 30,
-              ),
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.all(10),
@@ -283,7 +243,76 @@ class SummaryScreen extends StatelessWidget {
                         cubit.privacyPolicy == true &&
                         cubit.legalPolicy == true
                     ? () {
-                        navigateTo(context, const DoneScreen());
+                        showBottomSheet(
+                          context: context,
+                          backgroundColor: Colors.white.withOpacity(0.0),
+                          builder: (context) => Container(
+                            margin: const EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(20),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.grey.shade100,
+                                      blurRadius: 2)
+                                ]),
+                            height: MediaQuery.of(context).size.height / 2,
+                            width: double.infinity,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                const Spacer(),
+                                Image.asset(
+                                  "assets/images/apple pay.png",
+                                  height: 60,
+                                ),
+                                const SizedBox(
+                                  height: 30,
+                                ),
+                                const MyText(
+                                  text: "Payment Successful",
+                                  color: Colors.black,
+                                  fontSize: 22,
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                MyText(
+                                  text: "Thank you! Your payment is complete",
+                                  color: Colors.grey.shade400,
+                                  fontSize: 16,
+                                ),
+                                const SizedBox(
+                                  height: 30,
+                                ),
+                                const Spacer(),
+                                ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: AppColors.colorTow,
+                                    // shadowColor: AppColors.shadowColor.withOpacity(0.3),
+                                    elevation: 0,
+                                    minimumSize: const Size(double.infinity, 50),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                  ),
+                                  onPressed: () =>
+                                      navigateTo(context, const DoneScreen()),
+                                  child: const MyText(
+                                    text: "Done",
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                        );
+                        //
                       }
                     : null,
                 child: const MyText(
@@ -295,6 +324,43 @@ class SummaryScreen extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+}
+
+class RowText extends StatelessWidget {
+  const RowText({super.key, required this.text, required this.price});
+
+  final String text;
+  final String price;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      child: Row(
+        children: [
+          Expanded(
+            flex: 4,
+            child: MyText(
+              text: text,
+              color: Colors.grey.shade600,
+              fontSize: 14,
+            ),
+          ),
+          const SizedBox(
+            height: 5,
+          ),
+          Expanded(
+            flex: 2,
+            child: MyText(
+              text: "$price USD",
+              color: AppColors.mainColor,
+              fontSize: 14,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
